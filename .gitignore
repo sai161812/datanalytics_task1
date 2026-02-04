@@ -1,0 +1,9 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated HTML output
+app_category_analysis.html
+
+# OS files
+.DS_Store
