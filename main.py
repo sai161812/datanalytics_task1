@@ -11,6 +11,8 @@ def clean_installs(value):
     return pd.to_numeric(value, errors="coerce")
 
 data["Installs"] = data["Installs"].apply(clean_installs)
+# A malformed CSV row can force this entire column to object/string dtype.
+data["Reviews"] = pd.to_numeric(data["Reviews"], errors="coerce")
 
 def parse_size(size):
     if isinstance(size, str):

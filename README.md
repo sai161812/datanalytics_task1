@@ -22,3 +22,9 @@ The visualization is conditionally generated and available only between **3:00 P
 ```bash
 pip install -r requirements.txt
 python app.py
+
+## Check numeric aggregation
+
+Run `python -m unittest discover -s tests -v` after installing `requirements.txt`. The regression fixture uses string-valued review counts, as occurs when a malformed CSV row forces the source column to object dtype. The expected category total is arithmetic addition (`100 + 200 = 300`), not string concatenation (`100200`).
+
+The existing 3–5 PM IST generation window remains in place. The regression check bypasses chart-file writes; it does not validate the dataset, ranking criteria, or access controls.
